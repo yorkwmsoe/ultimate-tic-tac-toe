@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+h4 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+h5 {
+    margin-top: 0;
+    font-size: 14px;
+}
+
+h6 {
+    margin-top: 0;
+    font-size: 12px;
+}
+
+code {
+    font-size: 1.2em;
+}
+
+ul {
+    padding-inline-start: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+.square {
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 34px;
+}
+
+.board {
+    border: 1px solid black;
+    float: left;
+    position: relative;
+}
+
+.board-row:after {
+    clear: both;
+    content: '';
+    display: table;
+}
+
+.board-overlay {
+    z-index: 9;
+    background-color: gray;
+    position: relative;
+    top: -100px;
+    margin-bottom: -100px;
+    width: 99px;
+    height: 100px;
+    font-size: 100px;
+    opacity: 75%;
+    text-align: center;
+    vertical-align: middle;
+    display: none;
+}
+
+.board-overlay.active {
+    display:inherit;
+}
+
+.game-row:after {
+    clear: both;
+    content: '';
+    display: table;
+
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+}
+
+.status {
+    margin-bottom: 10px;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+}
+
+.game-info {
+    margin-left: 20px;
+}
+
+.inactive * {
+    background-color: gray !important;
+}

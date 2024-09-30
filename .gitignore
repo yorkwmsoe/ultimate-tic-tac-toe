@@ -198,3 +198,6 @@ dist
 
 # WSL Protected files
 Zone.Identifier
+
+# stryker temp files
+.stryker-tmp
