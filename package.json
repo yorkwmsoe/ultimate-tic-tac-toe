@@ -9,7 +9,8 @@
     "test": "jest --watch",
     "eject": "react-scripts eject",
     "electron-start": "electron .",
-    "electron-package": "electron-builder -mwl"
+    "electron-package": "electron-builder -wl",
+    "electron-package-mac": "electron-builder -m"
   },
   "build": {
     "productName": "Ultimate-Tic-Tac-Toe",
