@@ -2,7 +2,7 @@
   "name": "ultimate-tic-tac-toe",
   "version": "1.0.0",
   "description": "",
-  "main": "electron.js",
+  "main": "public/electron.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -10,12 +10,20 @@
     "eject": "react-scripts eject",
     "electron-start": "electron .",
     "electron-package": "electron-builder -wl",
-    "electron-package-mac": "electron-builder -m"
+    "electron-package-mac": "electron-builder -m --em.main=build/electron.js"
   },
   "build": {
     "productName": "Ultimate-Tic-Tac-Toe",
-    "appId": "com.billyyork.ultimate-tic-tac-toe"
+    "appId": "com.billyyork.ultimate-tic-tac-toe",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   },
+  "homepage": "./",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -35,6 +43,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.24.7",
     "babel-jest": "^29.7.0",
+    "electron-is-dev": "^3.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1",
