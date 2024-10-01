@@ -21,7 +21,8 @@
     ],
     "directories": {
       "buildResources": "assets"
-    }
+    },
+    "extends": null
   },
   "homepage": "./",
   "keywords": [],
