@@ -1,18 +1,31 @@
-const { app, BrowserWindow } = require('electron');
+import { app, BrowserWindow } from 'electron';
 
-const path = require('node:path');
-const isDev = require('electron-is-dev');
+import path from 'node:path';
+import isDev from 'electron-is-dev';
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      webSecurity: false
     }
   })
 
-  win.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);
+  const indexPath = path.join(__dirname, '../public/index.html');
+  if (isDev) {
+    win.loadURL('http://localhost:3000');
+  } else {
+    setTimeout(() => {
+      win.loadURL(indexPath);
+    }, 2000);
+  }
   win.webContents.openDevTools()
 };
 

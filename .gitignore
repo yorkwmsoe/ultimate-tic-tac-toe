@@ -201,3 +201,6 @@ Zone.Identifier
 
 # stryker temp files
 .stryker-tmp
+
+# MacOS Specific files
+.DS_Store

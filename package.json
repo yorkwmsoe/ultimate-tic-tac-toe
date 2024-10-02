@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "ultimate-tic-tac-toe",
   "version": "1.0.0",
   "description": "",
@@ -6,6 +7,7 @@
   "scripts": {
     "test": "jest --watch",
     "electron-start": "electron .",
+    "dev-start": "concurrently \"BROWSER=none react-scripts start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-package": "electron-builder -wl",
     "electron-package-mac": "electron-builder -m -c.extraMetadata.main=./public/electron.js"
   },
@@ -13,14 +15,18 @@
     "productName": "Ultimate-Tic-Tac-Toe",
     "appId": "com.billyyork.ultimate-tic-tac-toe",
     "files": [
-      "build/**/*",
+      "**/*",
+      "build",
       "node_modules/**/*",
       "dist/**/*",
       "package.json",
-      "./public/electron.js"
+      "public/*",
+      "*.js"
     ],
     "directories": {
-      "buildResources": "assets"
+      "buildResources": "build",
+      "app": "./",
+      "output": "dist"
     },
     "extends": null
   },
@@ -44,10 +50,15 @@
   "dependencies": {
     "@babel/preset-react": "^7.24.7",
     "babel-jest": "^29.7.0",
+    "concurrently": "^9.0.1",
     "electron-is-dev": "^3.0.1",
+    "path": "^0.12.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "ts-jest": "^29.2.5"
+    "react-scripts": "^5.0.1",
+    "ts-jest": "^29.2.5",
+    "url": "^0.11.4",
+    "wait-on": "^8.0.1"
   },
   "browserslist": {
     "production": [

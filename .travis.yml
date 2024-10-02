@@ -13,3 +13,17 @@ install:
 
 script:
   pnpm electron-package-mac
+
+before_deploy:
+  - git config --local user.name "yorkwmsoe"
+  - git config --local user.email "yorkw@msoe.edu"
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date + '%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: "dist/Ultimate-Tic-Tac-Toe-*-arm64.dmg"
+  skip_cleanup: true
+  on:
+    tags: false
