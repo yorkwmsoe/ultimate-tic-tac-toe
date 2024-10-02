@@ -27,4 +27,4 @@ deploy:
   cleanup: false
   on:
     tags: true
-    branch: main
+    all_branches: true
