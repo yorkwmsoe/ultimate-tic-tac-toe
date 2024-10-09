@@ -22,8 +22,9 @@ before_deploy:
 
 deploy:
   provider: releases
-  api_key: $GITHUB_TOKEN
-  file: "dist/Ultimate-Tic-Tac-Toe-*-arm64.dmg"
+  api_key:
+    secure: qQer0dwHRVnO0Pu+vhwU9Lz4ScyvIb4wQzYfvelCfwD7PXgLW1BWc54C+i6JFw+blMfuCc7OU8DxiD0be7loObj9KwGaJQAzFF3mj9tHUes3gfX+Fi4EKZ5NYQbb55w5i9HRUybLWFixNTDeltjjt6ExXt/x7T8TAh9wqsfPOCwDkb1CaYOugHiFatHYNfgrPvs1T6glgOK9h+suTMUeAUb+jGvrVTWGC7v2TgA1rB6Af29x+PRroFS7MxEN8wBbi4+rruQ5/uJGSSxCRGSluPwAKs/NwPGJG+G23zHv8qlVT9p6rUqxW1MlPV9sXiUr13ppDoN7Q0FxC+vAFKVOFWapgWDEdjnpRwiD2Hx54bOqXP6MVGBLLPwI4mhBd39WtQc7KkofsLh9bgGV2GmXlt8cOQZxNYktSz8oWZcykYRA4QPEeDEZexyb3RwQVNQ9KolfoPs12dPMGoeKKK1f82t2PwMRe7M/vItZssepEl60tZr0UyhaLrnuYDti+b0JQ+cBpFva9z/c4OZ3ZsEgr67NnRdRAvPhE905k4YGtFqHbmpVSA/FOVn7Oft/UXnDiTPbPaK45Q86bF6c3kKWX6fg/9JE32WivSWq3h5YLbY7BYqwe4UnUI1EaGSPPKu/zEM0t1ihVt7z7egYzu3+zoJMZjWcO6R39CiqGXQDvtg=
+  file: "dist/*.dmg"
   cleanup: false
   on:
     tags: true
